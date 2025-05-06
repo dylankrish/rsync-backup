@@ -15,7 +15,7 @@ REMOTE_HOST="backupserver.local"
 REMOTE_DIR="/mnt/backups/$(hostname)/"
 
 set -x # verbose
-set -e
+set -e # exit on error
 
 ARCHIVE_NAME="$BACKUP_NAME-$TIMESTAMP.tar.gz"
 
