@@ -28,9 +28,13 @@ Use root if necessary, if not needed then use user
 ```
 command="rsync --server --sender -logDtpre.i . backups",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb backup-client
 ```
-For extra security, you can restrict the device to only be able to backup to a certain directory. Example:
+For extra security, you can restrict the device to only be able to backup to a certain directory. Example with Home Assistant:
 ```
 from="10.1.1.7",command="rsync --server --receiver -logDtpre . ~/backups/homeassistant",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb homeassistant
+```
+If you restrict the directory, set the script like this:
+```bash
+REMOTE_DIR="/home/backupuser/backups/homeassistant"
 ```
 
 ## Step 5 - Client Setup
