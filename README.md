@@ -24,19 +24,19 @@ cat ~/.ssh/backup_rsync.pub
 ```
 
 Copy the file to ~/.ssh/authorized_keys on the **server**. Be sure to restrict it so that it can only access the backup directory. Here is an example.
-# use root if necessary, if not needed then use user
-```
+Use root if necessary, if not needed then use user
+```bash
 command="rsync --server --sender -logDtpre.i . backups",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb root@test-example
 ```
 
 ## Step 5 - Client Setup
 Install tar + rsync
-```
+```bash
 sudo dnf in rsync tar
 ```
 
 Download script and make executable
-```
+```bash
 chmod +x main.sh
 ```
 
@@ -44,7 +44,7 @@ chmod +x main.sh
 
 Use either **cron** or **systemd** for this. Below is a cron example. On the client:
 
-```
+```bash
 git clone https://github.com/dylankrish/rsync-backup.git
 crontab -e
 ```
@@ -54,6 +54,6 @@ Add the following lines:
 30 2 * * * /home/youruser/backup.sh >> /home/youruser/backup.log 2>&1
 ```
 This script will run daily at 2:30 AM defined by "30 2" at the beginning of the crontab file. Verify that your cronjob is installed using:
-```
+```bash
 crontab -l
 ```
