@@ -26,7 +26,7 @@ echo "Compressing $DIR into $ARCHIVE_NAME..."
 tar -czf "$ARCHIVE_NAME" "$DIR"
 
 echo "Syncing to remote server..."
-rsync -avz -e "ssh -i "$SSH_KEY" "$ARCHIVE_NAME" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR"
+rsync -avz -e "ssh -i $SSH_KEY" "$ARCHIVE_NAME" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR"
 
 echo "Cleaning up..."
 rm "$ARCHIVE_NAME"
