@@ -42,4 +42,18 @@ chmod +x main.sh
 
 ## Step 7 - Automation
 
-Use either **cron** or **systemd** for this.
+Use either **cron** or **systemd** for this. Below is a cron example. On the client:
+
+```
+git clone https://github.com/dylankrish/rsync-backup.git
+crontab -e
+```
+
+Add the following lines:
+```
+30 2 * * * /home/youruser/backup.sh >> /home/youruser/backup.log 2>&1
+```
+This script will run daily at 2:30 AM defined by "30 2" at the beginning of the crontab file. Verify that your cronjob is installed using:
+```
+crontab -l
+```
