@@ -35,7 +35,7 @@ Install tar + rsync
 sudo dnf in rsync tar
 ```
 
-Download script and make executable
+Download script, edit to your liking, and make executable
 ```bash
 chmod +x main.sh
 ```
