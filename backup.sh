@@ -12,7 +12,7 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 # remote backup server config
 REMOTE_USER="backupuser"
 REMOTE_HOST="backupserver.local"
-REMOTE_DIR="/mnt/backups/$(hostname)/"
+REMOTE_DIR="/home/backupuser/backups"
 
 set -x # verbose
 set -e # exit on error
