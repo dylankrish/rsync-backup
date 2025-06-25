@@ -2,7 +2,7 @@
 
 ## Step 1 - Create backup user
 ```bash
-sudo useradd -m -s /sbin/nologin backupuser
+sudo useradd -m backupuser
 ```
 
 ## Step 2 - Rsync installation (Rocky/RHEL Example)
@@ -26,7 +26,7 @@ cat ~/.ssh/backup_rsync.pub
 Copy the file to ~/.ssh/authorized_keys on the **server**. Be sure to restrict it so that it can only access the backup directory. Here is an example.
 Use root if necessary, if not needed then use user
 ```
-command="rsync --server --sender -logDtpre.i . backups",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb backup-client
+command="rsync --server -logDtpre.i . backups",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb backup-client
 ```
 For extra security, you can restrict the device to only be able to backup to a certain directory. Example with Home Assistant:
 ```
