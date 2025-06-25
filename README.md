@@ -38,9 +38,9 @@ For extra security, you can restrict the device to only be able to backup to a c
 ```
 command="/usr/share/doc/rsync/support/rrsync /home/backupuser/backups/homeassistant",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb homeassistant
 ```
-If you restrict the directory, set the script like this:
+If you restrict the directory using rrsync, set the script like this to backup to the directory shared:
 ```bash
-REMOTE_DIR="/home/backupuser/backups/homeassistant"
+REMOTE_DIR="/"
 ```
 
 ## Step 5 - Client Setup
