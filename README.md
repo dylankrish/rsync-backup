@@ -46,12 +46,14 @@ REMOTE_DIR="/"
 ## Step 5 - Client Setup
 Install tar + rsync
 ```bash
-sudo dnf in rsync tar
+sudo dnf in rsync tar git
 ```
 
-Download script, edit to your liking, and make executable
+Clone repo and, edit to your liking, and make executable
 ```bash
-chmod +x main.sh
+git clone https://github.com/dylankrish/rsync-backup.git
+cd rsync-backup
+chmod +x backup.sh
 ```
 
 ## Step 7 - Automation
@@ -59,7 +61,6 @@ chmod +x main.sh
 Use either **cron** or **systemd** for this. Below is a cron example. On the client:
 
 ```bash
-git clone https://github.com/dylankrish/rsync-backup.git
 crontab -e
 ```
 
