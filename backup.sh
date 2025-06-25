@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# directory to back up
-DIR=""
+DIR="" # directory to back up
+BACKUP_NAME="backup" # name of backup
+SSH_KEY="~/.ssh/backup_rsync" # ssh key to use
+REMOTE_USER="backupuser" # user to log in as
+REMOTE_HOST="backupserver.local" # hostname or IP address to connect to
+REMOTE_DIR="/" # directory to back up to on the server, remember to add / to the end
 
-# name of backup
-BACKUP_NAME="backup"
+# add any pre-backup code here, such as temporarily stopping docker containers
+# ---
 
-# ssh key to use
-SSH_KEY="~/.ssh/backup_rsync"
-# remote backup server config
-REMOTE_USER="backupuser"
-REMOTE_HOST="backupserver.local"
-REMOTE_DIR="/" # remember to add / at the end to make sure it's a directory
-
+# ---
 
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S") # timestamp for folder name
 ARCHIVE_NAME="$BACKUP_NAME-$TIMESTAMP.tar.gz"
