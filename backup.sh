@@ -11,7 +11,7 @@ SSH_KEY="~/.ssh/backup_rsync"
 # remote backup server config
 REMOTE_USER="backupuser"
 REMOTE_HOST="backupserver.local"
-REMOTE_DIR="/home/backupuser/backups"
+REMOTE_DIR="/home/backupuser/backups/"
 
 
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S") # timestamp for folder name
