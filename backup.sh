@@ -18,7 +18,7 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M%S") # timestamp for folder name
 ARCHIVE_NAME="$BACKUP_NAME-$TIMESTAMP.tar.gz"
 
 set -e # exit on error
-set -x # verbose
+# set -x # verbose
 
 # compress directory for backup
 echo "Compressing $DIR into $ARCHIVE_NAME..."
