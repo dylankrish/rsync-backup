@@ -1,5 +1,11 @@
 # How to set up backups with Rsync
 
+### Disclaimer: Guide was created for Rocky Linux/RHEL
+This guide was created for Red Hat Enterprise Linux and it's derivatives. You may need to change some commands to adapt to your setup, for example:
+- The useradd command
+- `apt install` instead of `dnf install`
+- The location of rrsync
+
 ## Step 1 - Create backup user
 ```bash
 sudo useradd -m backupuser
