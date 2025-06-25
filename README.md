@@ -26,11 +26,11 @@ cat ~/.ssh/backup_rsync.pub
 Copy the file to ~/.ssh/authorized_keys on the **server**. Be sure to restrict it so that it can only access the backup directory. Here is an example.
 Use root if necessary, if not needed then use user
 ```
-command="rsync --server -logDtpre.i . backups",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb backup-client
+no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb backup-client
 ```
-For extra security, you can restrict the device to only be able to backup to a certain directory. Example with Home Assistant:
+For extra security, you can restrict the device to only be able to backup to a certain directory using rrsync (restricted rsync). Example with Home Assistant:
 ```
-from="10.1.1.7",command="rsync --server --receiver -logDtpre . ~/backups/homeassistant",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb homeassistant
+command="/usr/share/doc/rsync/support/rrsync /home/backupuser/backups/homeassistant",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa iusdGDUIGSAIUFGHihwjerdhtuigerb homeassistant
 ```
 If you restrict the directory, set the script like this:
 ```bash
