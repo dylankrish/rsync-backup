@@ -68,7 +68,12 @@ Add the following lines:
 ```
 30 2 * * * /home/youruser/backup.sh >> /home/youruser/backup.log 2>&1
 ```
-This script will run daily at 2:30 AM defined by "30 2" at the beginning of the crontab file. Verify that your cronjob is installed using:
+This script will run daily at 2:30 AM defined by "30 2" at the beginning of the crontab file. 
+If you wanted to do weekly, on Sunday for example:
+```
+30 2 * * 0 /home/youruser/backup.sh >> /home/youruser/backup.log 2>&1
+```
+Verify that your cronjob is installed using:
 ```bash
 crontab -l
 ```
